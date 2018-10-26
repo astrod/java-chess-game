@@ -1,0 +1,18 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    testCompile "com.google.truth:truth:0.42"
+    testCompile "com.google.truth.extensions:truth-java8-extension:0.42"
+    testCompile 'junit:junit:4.12'
+}
+
