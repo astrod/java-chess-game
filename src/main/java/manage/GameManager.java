@@ -20,7 +20,7 @@ public class GameManager {
 			chessBoard.display();
 			String input = gameInputManager.getInput(chessBoard);
 			GameValidator validator = new GameValidator();
-			GameStatus status = validator.findGameStatusByInput(input);
+			GameInput status = validator.findGameStatusByInput(input);
 
 
 		}

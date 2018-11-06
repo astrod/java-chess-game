@@ -4,10 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static com.google.common.truth.Truth.assertThat;
-import static com.google.common.truth.Truth.assertWithMessage;
-import static com.google.common.truth.Truth.assert_;
-
-
 
 public class GameValidatorTest {
 
@@ -23,10 +19,10 @@ public class GameValidatorTest {
 		// given
 
 		// when
-		GameStatus result = validator.findGameStatusByInput("df");
+		GameInput result = validator.findGameStatusByInput("df");
 
 		// then
-		assertThat(result).isEqualTo(GameStatus.INVALID);
+		assertThat(result.getGameStatus()).isEqualTo(GameStatus.INVALID);
 	}
 
 	@Test
@@ -34,20 +30,9 @@ public class GameValidatorTest {
 		// given
 
 		// when
-		GameStatus result = validator.findGameStatusByInput("x");
+		GameInput result = validator.findGameStatusByInput("x");
 
 		// then
-		assertThat(result).isEqualTo(GameStatus.EXITED);
-	}
-
-	@Test
-	public void findGameStatusByInput_게임이끝남() {
-		// given
-
-		// when
-		GameStatus result = validator.findGameStatusByInput("1,2");
-
-		// then
-		assertThat(result).isEqualTo(GameStatus.ENDED);
+		assertThat(result.getGameStatus()).isEqualTo(GameStatus.EXITED);
 	}
 }
