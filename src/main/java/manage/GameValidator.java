@@ -28,6 +28,6 @@ public class GameValidator {
 			}
 		}
 
-		return new GameInput(GameStatus.CONTINUE, new GameGridPos(list.get(0), list.get(1)));
+		return new GameInput(GameStatus.CONTINUE, new GridPos(list.get(0), list.get(1)));
 	}
 }

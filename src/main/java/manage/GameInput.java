@@ -3,18 +3,18 @@ package manage;
 public class GameInput {
 
 	private GameStatus gameStatus;
-	private GameGridPos gameGridPos;
+	private GridPos gridPos;
 
-	public GameInput(GameStatus gameStatus, GameGridPos gameGridPos) {
+	public GameInput(GameStatus gameStatus, GridPos gridPos) {
 		this.gameStatus = gameStatus;
-		this.gameGridPos = gameGridPos;
+		this.gridPos = gridPos;
 	}
 
 	public GameStatus getGameStatus() {
 		return gameStatus;
 	}
 
-	public GameGridPos getGameGridPos() {
-		return gameGridPos;
+	public GridPos getGridPos() {
+		return gridPos;
 	}
 }

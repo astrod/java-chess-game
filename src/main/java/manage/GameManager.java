@@ -2,27 +2,28 @@ package manage;
 
 import board.ChessBoard;
 
-import java.util.Scanner;
-
 public class GameManager {
 
 	private ChessBoard chessBoard;
 	private GameInputManager gameInputManager;
+	private GameValidator validator;
 
-	public GameManager(ChessBoard chessBoard, GameInputManager gameInputManager) {
+	public GameManager(ChessBoard chessBoard, GameInputManager gameInputManager, GameValidator validator) {
 		this.chessBoard = chessBoard;
 		this.gameInputManager = gameInputManager;
+		this.validator = validator;
 	}
 
-	public void startGame() {
+	public boolean startGame() {
 
 		while(true) {
 			chessBoard.display();
 			String input = gameInputManager.getInput(chessBoard);
-			GameValidator validator = new GameValidator();
 			GameInput status = validator.findGameStatusByInput(input);
 
-
+			if(status.getGameStatus() == GameStatus.EXITED) {
+				return true;
+			}
 		}
 	}
 
