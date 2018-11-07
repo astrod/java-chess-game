@@ -1,7 +1,5 @@
 package piece;
 
-import manage.GridPos;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

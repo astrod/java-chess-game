@@ -1,14 +1,16 @@
 package manage;
 
+import java.util.List;
+
 public class Token {
 
 	private static final String EXIT_CODE = "x";
 	private static final String DELIMITER = ",";
 
-	private String [] token;
+	private List<String> token;
 
-	public String[] getToken() {
-		return token;
+	public String [] getDestPos() {
+		return new String[2](token[2], token[3]);
 	}
 
 	public Token(String input) {

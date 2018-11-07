@@ -1,4 +1,6 @@
-package manage;
+package piece;
+
+import board.ChessBoard;
 
 import java.util.Objects;
 
@@ -13,11 +15,31 @@ public class GridPos {
 	}
 
 	public boolean isWhite() {
-		return true;
+		if(xPos % 2 == 1 && yPos % 2 == 1) {
+			return true;
+		}
+
+		if(xPos % 2 == 0 && yPos % 2 == 0) {
+			return true;
+		}
+
+		return false;
 	}
 
 	public boolean isBlack() {
-		return true;
+		if(xPos % 2 == 0 && yPos % 2 == 1) {
+			return true;
+		}
+
+		if(xPos % 2 == 1 && yPos % 2 == 0) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isSentinel() {
+		return xPos == ChessBoard.START_POS || yPos == ChessBoard.START_POS || xPos == ChessBoard.END_POS || yPos == ChessBoard.END_POS;
 	}
 
 	@Override

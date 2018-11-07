@@ -1,16 +1,20 @@
 package board;
 
-import manage.GridPos;
+import piece.GridPos;
 import manage.Turn;
 import piece.ChessPieceManager;
 import piece.Piece;
 
 public class ChessBoard {
 
-	private static final int START_POS = 0;
-	private static final int END_POS = 10;
+	public static final int START_POS = 0;
+	public static final int END_POS = 9;
+
 	private ChessPieceManager chessPieceManager;
 	private BlankBoardPrinter blankBoardPrinter;
+
+	public ChessBoard() {
+	}
 
 	public ChessBoard(ChessPieceManager chessPieceManager, BlankBoardPrinter blankBoardPrinter) {
 		this.chessPieceManager = chessPieceManager;
@@ -24,11 +28,12 @@ public class ChessBoard {
 	public void display() {
 		for(int i = START_POS; i< END_POS; i++) {
 			for(int j = START_POS; j<END_POS; j++) {
-				if(isSentinel(i, j)) {
+				GridPos gridPos = new GridPos(i, j);
+
+				if(gridPos.isSentinel()) {
 					continue;
 				}
 
-				GridPos gridPos = new GridPos(i, j);
 				Piece piece = chessPieceManager.findPieceByGridPos(gridPos);
 
 				if(piece == null) {
@@ -37,13 +42,11 @@ public class ChessBoard {
 				}
 
 				System.out.print(piece.getCode());
-
 			}
+			System.out.println();
 		}
 	}
 
-	private boolean isSentinel(int i, int j) {
-		return i == START_POS || j == START_POS || i == END_POS || j == END_POS;
-	}
+
 
 }

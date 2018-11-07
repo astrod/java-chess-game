@@ -35,4 +35,26 @@ public class GameValidatorTest {
 		// then
 		assertThat(result.getGameStatus()).isEqualTo(GameStatus.EXITED);
 	}
+
+	@Test
+	public void findGameStatusByInput_이상한숫자값이입력됨() {
+		// given
+
+		// when
+		GameInput result = validator.findGameStatusByInput("1,ㅁ");
+
+		// then
+		assertThat(result.getGameStatus()).isEqualTo(GameStatus.INVALID);
+	}
+
+	@Test
+	public void findGameStatusByInput_정상적으로처리된경우() {
+		// given
+
+		// when
+		GameInput result = validator.findGameStatusByInput("1,3");
+
+		// then
+		assertThat(result.getGameStatus()).isEqualTo(GameStatus.CONTINUE);
+	}
 }

@@ -1,5 +1,7 @@
 package manage;
 
+import piece.GridPos;
+
 import java.util.ArrayList;
 import java.util.List;
 

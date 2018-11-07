@@ -1,5 +1,7 @@
 package manage;
 
+import piece.GridPos;
+
 public class GameInput {
 
 	private GameStatus gameStatus;

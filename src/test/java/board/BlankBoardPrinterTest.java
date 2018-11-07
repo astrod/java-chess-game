@@ -1,6 +1,6 @@
 package board;
 
-import manage.GridPos;
+import piece.GridPos;
 import org.junit.Before;
 import org.junit.Test;
 

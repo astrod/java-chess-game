@@ -1,6 +1,5 @@
 package piece;
 
-import manage.GridPos;
 import org.junit.Before;
 import org.junit.Test;
 
