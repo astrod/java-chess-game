@@ -2,7 +2,7 @@ package board;
 
 import piece.GridPos;
 import manage.Turn;
-import piece.ChessPieceManager;
+import piece.manager.ChessPieceManager;
 import piece.Piece;
 
 public class ChessBoard {

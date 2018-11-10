@@ -4,8 +4,8 @@ import piece.GridPos;
 
 public class BlankBoardPrinter {
 
-	protected static final String BLACK_SQUARE = "■";
-	protected static final String WHITE_SQUARE = "□";
+	protected static final String BLACK_SQUARE = "□";
+	protected static final String WHITE_SQUARE = "■";
 
 	public String print(GridPos pos) {
 

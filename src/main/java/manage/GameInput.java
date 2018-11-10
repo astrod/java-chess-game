@@ -4,19 +4,26 @@ import piece.GridPos;
 
 public class GameInput {
 
-	private GameStatus gameStatus;
-	private GridPos gridPos;
+	private Token token;
 
-	public GameInput(GameStatus gameStatus, GridPos gridPos) {
-		this.gameStatus = gameStatus;
-		this.gridPos = gridPos;
+	public GameInput(Token token) {
+		this.token = token;
 	}
 
 	public GameStatus getGameStatus() {
-		return gameStatus;
+		if(token.isExitedToken()) {
+			return GameStatus.EXITED;
+		}
+
+		if(token.isInvalidToken()) {
+			return GameStatus.INVALID;
+		}
+
+		if(token.isExitedToken()) {
+			return GameStatus.EXITED;
+		}
+
+		return GameStatus.CONTINUE;
 	}
 
-	public GridPos getGridPos() {
-		return gridPos;
-	}
 }

@@ -6,9 +6,11 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import piece.manager.ChessPieceManager;
+
 import static com.google.common.truth.Truth.assertThat;
 
-public class ChessPieceManagerTest {
+public class ChessPieceGeneratorTest {
 
 	private ChessPieceManager manager;
 

@@ -6,12 +6,10 @@ public class GameManager {
 
 	private ChessBoard chessBoard;
 	private GameInputManager gameInputManager;
-	private GameValidator validator;
 
-	public GameManager(ChessBoard chessBoard, GameInputManager gameInputManager, GameValidator validator) {
+	public GameManager(ChessBoard chessBoard, GameInputManager gameInputManager) {
 		this.chessBoard = chessBoard;
 		this.gameInputManager = gameInputManager;
-		this.validator = validator;
 	}
 
 	public boolean startGame() {
@@ -19,7 +17,7 @@ public class GameManager {
 		while(true) {
 			chessBoard.display();
 			String input = gameInputManager.getInput(chessBoard);
-			GameInput status = validator.findGameStatusByInput(input);
+			GameInput status = new GameInput(new Token(input));
 
 			if(status.getGameStatus() == GameStatus.EXITED) {
 				return true;

@@ -46,7 +46,7 @@ public class GridPosTest {
 	@Test
 	public void isBlack_x홀수y짝수() {
 		// given
-		GridPos gridPos = new GridPos(3, 6);
+		GridPos gridPos = new GridPos(1, 8);
 
 		// when
 		boolean result = gridPos.isBlack();

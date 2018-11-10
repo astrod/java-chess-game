@@ -1,8 +1,12 @@
-package piece;
+package piece.manager;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import piece.GridPos;
+import piece.Piece;
+import piece.PieceGroup;
 
 public class ChessPieceManager {
 
@@ -11,6 +15,11 @@ public class ChessPieceManager {
 
 	public ChessPieceManager(List<Piece> pieceList) {
 		this.pieceList = pieceList;
+		this.pieceMap = initializeMap();
+	}
+
+	public ChessPieceManager(PieceGroup pieceGroup) {
+		this.pieceList = pieceGroup.getPieceList();
 		this.pieceMap = initializeMap();
 	}
 
